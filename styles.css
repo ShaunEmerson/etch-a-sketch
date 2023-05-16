@@ -7,7 +7,8 @@ body {
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-image: url(images/tabletop.jpg);
+    background-size: 100% 100%;
     width: 100vw;
     height: 100vh;
     margin: 0px;
@@ -60,7 +61,7 @@ body {
     border-radius: 25px;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0px 0px 35px black;
+    box-shadow: 45px 45px 45px, inset 0px 0px 35px black;
     margin: 0px;
 }
 
