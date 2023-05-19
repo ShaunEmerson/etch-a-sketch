@@ -5,13 +5,74 @@ html {
 body {
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     background-image: url(images/tabletop.jpg);
     background-size: 100% 100%;
     width: 100vw;
     height: 100vh;
     margin: 0px;
+}
+
+#paper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 800px;
+    background: white;
+    padding: 50px;
+    box-shadow: 5px 5px 10px;
+    rotate: -2deg;
+}
+
+.btn {
+    width: 200px;
+    height: 200px;
+    border: none;
+    background-size: 100% 100%;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 3px black;
+}
+
+#black {
+    background-image: url(images/black.jpg);
+    color: white;
+}
+
+#blue {
+    background-image: url(images/blue.jpg);
+    color: white;
+}
+
+#green {
+    background-image: url(images/green.jpg);
+    color: white;
+}
+
+#orange {
+    background-image: url(images/orange.jpg);
+    color: white;
+}
+
+#purple {
+    background-image: url(images/purple.jpg);
+    color: white;
+}
+
+#red {
+    background-image: url(images/red.jpg);
+    color: white;
+}
+
+#white {
+    background: white;
+    color: white;
+}
+
+#yellow {
+    background-image: url(images/yellow.jpg);
+    color: white;
 }
 
 #inner-wrapper {
@@ -83,7 +144,7 @@ body {
 
 
 
-button {
+.circle {
     width: 115px;
     height: 115px;
     color: rgb(225, 225, 225);
