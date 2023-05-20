@@ -1,12 +1,10 @@
-html {
+html, body, #paper, #bottom, #border, #inner-wrapper, #top {
     display: flex;
 }
 
 body {
-    display: flex;
     flex: 1;
     justify-content: space-evenly;
-    align-items: center;
     background-image: url(images/tabletop.jpg);
     background-size: 100% 100%;
     width: 100vw;
@@ -14,15 +12,17 @@ body {
     margin: 0px;
 }
 
+body,  #border, #inner-wrapper, #top {
+    align-items: center;
+}
+
 #paper {
-    display: flex;
     flex-wrap: wrap;
     width: 600px;
-    height: 800px;
     background: white;
     padding: 50px;
     box-shadow: 5px 5px 10px;
-    rotate: -2deg;
+    rotate: -3deg;
 }
 
 .btn {
@@ -32,63 +32,65 @@ body {
     background-size: 100% 100%;
     font-size: 30px;
     font-weight: bolder;
+    color: white;
     text-shadow: 2px 2px 3px black;
+}
+
+.btn:hover {
+    font-size: 45px;
+    text-shadow: 5px 5px 5px black;
 }
 
 #black {
     background-image: url(images/black.jpg);
-    color: white;
 }
 
 #blue {
     background-image: url(images/blue.jpg);
-    color: white;
 }
 
 #green {
     background-image: url(images/green.jpg);
-    color: white;
 }
 
 #orange {
     background-image: url(images/orange.jpg);
-    color: white;
 }
 
 #purple {
     background-image: url(images/purple.jpg);
-    color: white;
 }
 
 #red {
     background-image: url(images/red.jpg);
-    color: white;
 }
 
 #white {
     background: white;
-    color: white;
 }
 
 #yellow {
     background-image: url(images/yellow.jpg);
-    color: white;
+}
+
+#rainbow {
+    background-image: url(images/rainbow.jpg);
 }
 
 #inner-wrapper {
-    height: 800px;
-    display: flex;
     flex: 0;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
+
+
+#top, 
+#border, 
+#inner-wrapper {
+    justify-content: center;
+} 
 
 #top {
     height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: goldenrod;
     font-size: 2em;
     font-weight: bolder;
@@ -101,29 +103,36 @@ body {
     margin: 0px 20px 0px 20px;
 }
 
-#top, #bottom {
-    width: 800px;
+#top, 
+#bottom {
     height: 150px
 }
 
+#top, 
+#bottom, 
+#border {
+    width: 800px;
+}
+
 #bottom {
-    display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
 
 #border {
-    display: flex;
     flex: 1 1 800px;
-    width: 800px;
-    height: 800px;
     background-color: red;
     border-radius: 25px;
-    align-items: center;
-    justify-content: center;
     box-shadow: 45px 45px 45px, inset 0px 0px 35px black;
     margin: 0px;
+    rotate: 2deg;
+}
+
+#paper,
+#border, 
+#inner-wrapper {
+    height: 800px;
 }
 
 #container {

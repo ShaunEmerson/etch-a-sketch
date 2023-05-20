@@ -1,14 +1,5 @@
 
 let color = "black";
-/*
-const black = document.getElementById('black');
-const green = document.getElementById('green');
-const orange = document.getElementById('orange');
-const purple = document.getElementById('purple');
-const red = document.getElementById('red');
-const white = document.getElementById('white');
-const yellow = document.getElementById('yellow');
-*/
 let lButton = document.getElementById('l-button');
 let rButton = document.getElementById('r-button');
 let container = document.querySelector('#container');
@@ -17,15 +8,8 @@ let gridNumInt = parseInt(gridNumber);
 let gridSize = (gridNumInt * gridNumInt);
 
 const validate = function(item) {
-    if (item < 16) {
-        item = 16;
-    };
-    if (item > 100) {
-        item = 100;
-    };
-
-    while (Number.isInteger(item) === false) {
-        item = parseInt(prompt('Invalid selection! Please choose a grid size between 16 & 100', 16));
+    while (Number.isInteger(item) === false || item < 16 || item > 100) {
+        item = parseInt(prompt('Invalid selection! Please choose a grid size between 16 & 100', 50));
     };
 }
 
@@ -55,7 +39,11 @@ const createGrid = function () {
     pixels = document.querySelectorAll('.pixel');
     pixels.forEach((pixel) => {
     pixel.addEventListener('mouseover', function(){
+        if (color === 'rainbow') {
+            this.style.background = `${randomColors()}`;
+        } else {
         this.style.background = `${color}`;
+        }
         let opacity = this.style.opacity;
         this.style.opacity = opacity ? (parseFloat(opacity) + 0.2) : 0.4;
         })
@@ -64,12 +52,25 @@ const createGrid = function () {
 
 createGrid();
 
-const btns = document.querySelectorAll('button');
-btns.forEach((button) => {
+const colorBtns = document.querySelectorAll('div#paper button');
+colorBtns.forEach((button) => {
     button.addEventListener('click', () => {
         color = button.id;
+        console.log(color);
     });
 });
+
+const randomInt = function (max) {
+    return Math.floor(Math.random() * (max + 1));
+}
+
+const randomColors = function () {
+    let rgb;
+    let r = randomInt(255);
+    let g = randomInt(255);
+    let b = randomInt(255);
+    return `rgb(${r},${g},${b})`;
+}
 
 
 const eraseGrid = function () {
