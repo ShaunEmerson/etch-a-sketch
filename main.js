@@ -5,13 +5,8 @@ let rButton = document.getElementById('r-button');
 let container = document.querySelector('#container');
 let gridNumber = 50;
 let gridNumInt = parseInt(gridNumber);
+let tempGridNum = 50;
 let gridSize = (gridNumInt * gridNumInt);
-
-const validate = function(item) {
-    while (Number.isInteger(item) === false || item < 16 || item > 100) {
-        item = parseInt(prompt('Invalid selection! Please choose a grid size between 16 & 100', 50));
-    };
-}
 
 /* Creates a number of grid columns based on the user input
 for use in styleCont function */
@@ -78,17 +73,22 @@ const eraseGrid = function () {
 }
 
 
-lButton.addEventListener('click', () => {
+const leftButton = lButton.addEventListener('click', () => {
     gridNumber = prompt('Choose a grid size between 16 & 100', `${gridNumInt}`);
-    if (gridNumber === null) {
+    tempGridNum = gridNumber;
+    if (gridNumber === null || gridNumber < 16 || gridNumber > 100) {
+        alert('Invalid selection! Please choose a grid size between 16 & 100');
         return;
     }
     eraseGrid();
     gridNumInt = parseInt(gridNumber);
-    validate(gridNumInt);
     gridSize = (gridNumInt * gridNumInt);
     createGrid();
 });
+
+const leftClick = function () {
+    return leftButton;
+}
 
 const reset = rButton.addEventListener('click', () => {
     eraseGrid();
