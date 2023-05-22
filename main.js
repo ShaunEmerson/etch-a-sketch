@@ -5,7 +5,7 @@ let rButton = document.getElementById('r-button');
 let container = document.querySelector('#container');
 let gridNumber = 50;
 let gridNumInt = parseInt(gridNumber);
-let tempGridNum = 50;
+let tempGridNum = gridNumber;
 let gridSize = (gridNumInt * gridNumInt);
 
 /* Creates a number of grid columns based on the user input
@@ -72,18 +72,26 @@ const eraseGrid = function () {
     container.innerHTML="";
 }
 
-
-const leftButton = lButton.addEventListener('click', () => {
+const lBtnFunc = function () {
     gridNumber = prompt('Choose a grid size between 16 & 100', `${gridNumInt}`);
-    tempGridNum = gridNumber;
-    if (gridNumber === null || gridNumber < 16 || gridNumber > 100) {
-        alert('Invalid selection! Please choose a grid size between 16 & 100');
+    if (gridNumber === null) {
         return;
     }
-    eraseGrid();
     gridNumInt = parseInt(gridNumber);
+    if (Number.isInteger(gridNumInt) === false || gridNumber < 16 || gridNumber > 100) {
+        alert('Invalid selection! Please choose a grid size between 16 & 100');
+        gridNumInt = tempGridNum;
+        return;
+    }
+
+    eraseGrid();
     gridSize = (gridNumInt * gridNumInt);
     createGrid();
+}
+
+
+const leftButton = lButton.addEventListener('click', () => {
+    lBtnFunc();
 });
 
 const leftClick = function () {
