@@ -161,10 +161,14 @@ body,  #border, #inner-wrapper, #top {
     border: 3px solid rgb(233, 233, 233);
     border-radius: 50%;
     box-shadow: 10px 10px 20px black, inset 0px 0px 40px white;
-    font-size: larger;
+    font-size: 25px;
     font-weight: bolder;
     background-color: rgb(171, 171, 171);
     margin-left: 25px;
     margin-right: 25px;
+}
 
+.circle:hover {
+    font-size: 30px;
+    text-shadow: 5px 5px 5px black; 
 }
